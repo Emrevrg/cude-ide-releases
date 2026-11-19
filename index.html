@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cude IDE</title>
+<meta name="description" content="Cude IDE is a Windows AI code editor: bring any model provider or a local GGUF model, hand big tasks to Cuets agents, and let the agent use your browser and tools with your approval.">
+<meta property="og:title" content="Cude IDE">
+<meta property="og:description" content="AI code editor for Windows with your own providers, local models, multi-agent Cuets, MCP tools and voice.">
+<meta property="og:image" content="assets/shot-agent.jpg">
+<meta name="theme-color" content="#0b0b0a">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  // 3D only when motion is welcome and WebGL exists; ?reduced=1 forces the static version.
+  (function () {
+    var root = document.documentElement, q = new URLSearchParams(location.search);
+    var reduced = q.get('reduced') === '1' || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+    var gl = false; try { var c = document.createElement('canvas'); gl = !!(c.getContext('webgl2') || c.getContext('webgl')); } catch (e) {}
+    if (reduced) root.classList.add('reduced');
+    if (reduced || !gl) root.classList.add('no3d');
+  })();
+</script>
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#features" data-i18n="skip">Skip to content</a>
+<div id="stage" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cude IDE home"><svg viewBox="0 0 557 557" aria-hidden="true"><path fill-rule="evenodd" d="M495,373 L488,366 L480,362 L465,361 L459,363 L294,463 L289,470 L290,524 L294,527 L301,527 L485,417 L495,407 L500,395 L500,385Z M219,195 L209,200 L201,212 L201,226 L205,234 L212,241 L275,285 L273,289 L208,330 L203,336 L200,343 L200,356 L203,363 L211,371 L226,375 L238,371 L342,307 L348,301 L352,293 L353,282 L350,273 L343,265 L236,196Z M288,29 L270,29 L255,35 L75,146 L64,156 L55,176 L55,389 L61,405 L74,419 L253,527 L262,526 L266,520 L266,472 L264,467 L259,462 L119,379 L114,372 L113,200 L117,192 L266,100 L278,95 L287,97 L460,204 L475,205 L486,201 L493,195 L500,180 L498,163 L491,152 L485,147 L303,35Z"/></svg>Cude IDE</a>
+    <nav class="links" aria-label="Sections">
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#providers" data-i18n="nav.providers">Providers</a>
+      <a href="#agents" data-i18n="nav.agents">Agents</a>
+      <a href="#download" data-i18n="nav.download">Download</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <span class="spacer"></span>
+    <button class="chip" id="lang" type="button" aria-label="Türkçeye geç">TR</button>
+    <button class="chip" id="theme" type="button" aria-label="Toggle light or dark appearance">◐</button>
+    <a class="btn btn-primary btn-small" href="#download" data-i18n="nav.get">Download</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" data-stage="0">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.badge">Version 0.1.0 · Windows x64</span></span>
+        <h1 data-i18n="hero.title">The code editor where <em>your AI</em> does the work.</h1>
+        <p class="lead" data-i18n="hero.lead">Connect the model provider you already use, hand bigger jobs to a team of agents, and let the agent drive your browser and tools. Every action waits for your approval.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg><span data-i18n="hero.download">Download for Windows</span></a>
+          <a class="btn btn-ghost" href="#features" data-i18n="hero.tour">See what it does</a>
+        </div>
+        <p class="meta" data-i18n="hero.meta">Free · One installer · Your API keys stay in Windows secure storage</p>
+      </div>
+      <div class="static-mark" aria-hidden="true"><svg viewBox="0 0 557 557"><path fill-rule="evenodd" d="M495,373 L488,366 L480,362 L465,361 L459,363 L294,463 L289,470 L290,524 L294,527 L301,527 L485,417 L495,407 L500,395 L500,385Z M219,195 L209,200 L201,212 L201,226 L205,234 L212,241 L275,285 L273,289 L208,330 L203,336 L200,343 L200,356 L203,363 L211,371 L226,375 L238,371 L342,307 L348,301 L352,293 L353,282 L350,273 L343,265 L236,196Z M288,29 L270,29 L255,35 L75,146 L64,156 L55,176 L55,389 L61,405 L74,419 L253,527 L262,526 L266,520 L266,472 L264,467 L259,462 L119,379 L114,372 L113,200 L117,192 L266,100 L278,95 L287,97 L460,204 L475,205 L486,201 L493,195 L500,180 L498,163 L491,152 L485,147 L303,35Z"/></svg></div>
+    </div>
+  </section>
+
+  <section class="product" aria-label="Product screenshot">
+    <div class="wrap">
+      <div class="shot reveal"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/shot-agent.jpg" alt="Cude IDE with the agent using browser tools" data-i18n-alt="prod.alt" width="1366" height="768"></div>
+    </div>
+  </section>
+
+  <section id="features" data-stage="1">
+    <div class="wrap">
+      <div class="kicker" data-i18n="feat.kicker">Everything in one window</div>
+      <h2 data-i18n="feat.title">Built for real work, not demos.</h2>
+      <p class="sub" data-i18n="feat.sub">A full Code-OSS editor with an AI panel that understands your project, writes files directly and keeps an undo for every change.</p>
+      <div class="grid">
+        <article class="card reveal"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h10M4 18h7"/></svg></div><h3 data-i18n="f1.t">Project-aware chat</h3><p data-i18n="f1.p">Reads your files and project rules; in Auto mode it writes changes straight into your folders, with one-click undo.</p></article>
+        <article class="card reveal"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><circle cx="12" cy="17" r="3"/></svg></div><h3 data-i18n="f2.t">Cuets multi-agent</h3><p data-i18n="f2.p">A planner, parallel workers and a reviewer split a big task, track it round by round and stop when the project checks pass.</p></article>
+        <article class="card reveal"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3 data-i18n="f3.t">Browser and computer tools</h3><p data-i18n="f3.p">Through MCP the agent opens pages, clicks, types and takes snapshots in one live session, only after you approve each call.</p></article>
+        <article class="card reveal"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12M8 7l4-4 4 4M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg></div><h3 data-i18n="f4.t">Any provider, local models</h3><p data-i18n="f4.p">Cloud providers and any OpenAI-compatible endpoint, plus Hugging Face GGUF models downloaded and run on your PC with llama.cpp.</p></article>
+        <article class="card reveal"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><h3 data-i18n="f5.t">Voice</h3><p data-i18n="f5.p">Dictate with the microphone and hear answers in the Windows voice for your language. No extra installs.</p></article>
+        <article class="card reveal"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4 7v5c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V7z"/></svg></div><h3 data-i18n="f6.t">Safe by default</h3><p data-i18n="f6.p">Keys live in OS secure storage; commands, tool calls and full access always ask first.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="providers" class="right" data-stage="2">
+    <div class="wrap">
+      <div class="half panel reveal">
+        <div class="kicker" data-i18n="pr.kicker">Your models, your keys</div>
+        <h2 data-i18n="pr.title">Bring the provider you trust.</h2>
+        <p class="sub" style="margin-bottom:0" data-i18n="pr.sub">Pick a provider, paste a key and Cude lists the models and their reasoning levels. Streaming, retries and clear error messages are built in.</p>
+        <div class="providers">
+          <span>OpenAI</span><span>Anthropic</span><span>Google Gemini</span><span>OpenRouter</span><span>Groq</span><span>Mistral</span><span>Kimi</span><span>MiniMax</span><span>NVIDIA</span><span>DeepSeek</span><span>River AI</span><span>Token Harbor</span><span>CometAPI</span><span>TokenMix</span><span>Crazyrouter</span><span>Azure OpenAI</span><span>Ollama</span><span class="local" data-i18n="pr.local">Local GGUF (llama.cpp)</span><span data-i18n="pr.more">+ any OpenAI-compatible API</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="agents" data-stage="3">
+    <div class="wrap">
+      <div class="half panel reveal">
+        <div class="kicker" data-i18n="ag.kicker">Agents that finish</div>
+        <h2 data-i18n="ag.title">Give it the whole task.</h2>
+        <p class="sub" style="margin-bottom:0" data-i18n="ag.sub">Cuets breaks a request into a checklist, runs workers in parallel and verifies the result with your own test command before calling it done.</p>
+        <ul class="ticks">
+          <li data-i18n="ag.l1">Long tasks are saved in the project and can be resumed</li>
+          <li data-i18n="ag.l2">Round and time budgets, so nothing runs forever</li>
+          <li data-i18n="ag.l3">Works with local agents too: Codex, Claude Code, OpenCode, Gemini CLI, Qwen Code</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="download" data-stage="4">
+    <div class="wrap">
+      <div class="kicker" data-i18n="dl.kicker">Download</div>
+      <h2 data-i18n="dl.title">Get Cude IDE 0.1.0</h2>
+      <p class="sub" data-i18n="dl.sub">One installer. It installs into your user folder, so no administrator rights are needed.</p>
+      <div class="dl">
+        <div class="main reveal">
+          <h3>Windows x64</h3>
+          <p style="color:var(--dim);margin:0" data-i18n="dl.req">Windows 10 or 11 (64-bit) · 4 GB RAM or more</p>
+          <div class="facts">
+            <div class="fact"><b data-i18n="dl.version">Version</b><span>0.1.0</span></div>
+            <div class="fact"><b data-i18n="dl.size">Size</b><span id="dl-size">281 MB</span></div>
+            <div class="fact"><b data-i18n="dl.type">Type</b><span>EXE</span></div>
+          </div>
+          <a class="btn btn-primary" id="dl-button" href="https://github.com/Emrevrg/cude-ide-releases/releases/latest/download/CudeIDE-Setup-0.1.0-x64.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg><span data-i18n="dl.button">Download CudeIDE-Setup-0.1.0-x64.exe</span></a>
+          <div class="hash"><code id="sha">SHA-256 C76F9E2F626EE62E9C0C41E7C58C4BAFE90F871562BC6BE19990143B59A6BF8A</code><button class="chip" id="copy-sha" type="button" data-i18n="dl.copy">Copy</button></div>
+        </div>
+        <div class="steps reveal">
+          <b data-i18n="dl.how">How to start</b>
+          <ol>
+            <li data-i18n="dl.s1">Run the installer. If Windows SmartScreen appears, choose "More info" → "Run anyway".</li>
+            <li data-i18n="dl.s2">Cude IDE opens from the Start menu and your desktop.</li>
+            <li data-i18n="dl.s3">Open a project, trust the folder and connect a provider from the model menu.</li>
+            <li><span data-i18n="dl.s4">Optional: check the download in PowerShell</span><pre>Get-FileHash .\CudeIDE-Setup-0.1.0-x64.exe</pre></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <div class="kicker">FAQ</div>
+      <h2 data-i18n="faq.title">Questions</h2>
+      <details><summary data-i18n="q1">Is Cude IDE free?</summary><p data-i18n="a1">Yes. You pay only your model provider for usage on your own key; local models and local agents use their own resources.</p></details>
+      <details><summary data-i18n="q2">Where are my API keys stored?</summary><p data-i18n="a2">In the Windows secure credential storage through the editor's secret storage. They are never written into project files or sent anywhere except the provider you chose.</p></details>
+      <details><summary data-i18n="q3">Can the agent change things without asking?</summary><p data-i18n="a3">In Auto mode it writes file edits and keeps an undo. Terminal commands, MCP tool calls and starting tool processes always ask first; Read-only and Plan modes never write.</p></details>
+      <details><summary data-i18n="q4">Why does Windows show a warning?</summary><p data-i18n="a4">The 0.1.0 installer is not code-signed yet, so SmartScreen may warn on first launch. You can confirm the file is intact with the SHA-256 value above.</p></details>
+      <details><summary data-i18n="q5">What is it built on?</summary><p data-i18n="a5">Cude IDE is built on the open-source Code-OSS editor (via VSCodium) with Cude's own AI extension, theme and settings. The MIT license and third-party notices ship with the app.</p></details>
+      <details><summary data-i18n="q6">Mac or Linux?</summary><p data-i18n="a6">Version 0.1.0 is Windows x64 only. Other platforms are planned.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Cude Studio · Norovox</span>
+    <span data-i18n="foot.note">Code-OSS and VSCodium are MIT licensed. Cude is not affiliated with Microsoft.</span>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+<script type="module" src="assets/scene.js"></script>
+</body>
+</html>
