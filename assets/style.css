@@ -157,3 +157,26 @@ html.reduced .reveal{opacity:1;transform:none;transition:none}
 .providers span{display:inline-flex;align-items:center;gap:7px}.providers span i{width:16px;height:16px;flex:0 0 16px;display:inline-flex;color:var(--text,currentColor)}.providers span i svg{width:100%;height:100%;display:block}
 
 .shot.mini{margin-top:26px;border-radius:14px}.shot.mini img{display:block;width:100%;height:auto}
+
+/* Language picker + right-to-left support */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.lang-pick{display:inline-flex}
+.lang-pick select.chip{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:26px;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 13px) 52%,calc(100% - 8px) 52%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;font:inherit}
+.lang-pick select.chip option{color:#111;background:#fff}
+/* Right-to-left languages: the layout stays put, text runs right-to-left */
+html[data-dir="rtl"] :is(h1,h2,h3,p,li,summary,label,.badge,.kicker,.meta,.lead,.sub,dd,dt,small){direction:rtl;text-align:right;unicode-bidi:plaintext}
+html[data-dir="rtl"] :is(code,pre,#sha){direction:ltr;text-align:left}
+/* Never scroll sideways on small screens */
+html{overflow-x:clip}
+img,svg,canvas,video{max-width:100%}
+/* Small screens: keep the header on one line and the 3D scene behind, not over, the text */
+@media (max-width: 600px){
+  header.nav .wrap{gap:8px}
+  .brand{white-space:nowrap;font-size:15px}
+  .lang-pick select.chip{max-width:120px;font-size:12px;padding-left:10px}
+  #stage{opacity:.18}
+}
+@media (max-width: 380px){
+  #theme{display:none}
+  .lang-pick select.chip{max-width:100px}
+}
