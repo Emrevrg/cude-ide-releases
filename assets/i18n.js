@@ -33,7 +33,7 @@ window.CUDE_I18N = {
     'q5':'What is it built on?','a5':'Cude IDE is built on the open-source Code-OSS editor (via VSCodium) with Cude\'s own AI extension, theme and settings. The MIT license and third-party notices ship with the app.',
     'q6':'Mac or Linux?','a6':'Version 0.1.0 is Windows x64 only. Other platforms are planned.',
     'foot.note':'Code-OSS and VSCodium are MIT licensed. Cude is not affiliated with Microsoft.',
-    'prod.alt':'Cude IDE agent fixing a failing test and running it again','pr.alt':'Cude IDE provider settings with grouped providers and logos','lo.alt':'Cude IDE finding a local llama.cpp server running on the PC'
+    'prod.alt':'Cude IDE agent working on a task next to the provider settings','pr.alt':'Cude IDE provider settings with grouped providers and logos','lo.alt':'Cude IDE first-run welcome and setup'
   },
   tr: {
     'skip':'İçeriğe geç','nav.features':'Özellikler','nav.providers':'Sağlayıcılar','nav.agents':'Ajanlar','nav.download':'İndir','nav.faq':'SSS','nav.get':'İndir','lang.label':'Dil',
@@ -64,7 +64,7 @@ window.CUDE_I18N = {
     'q5':'Neyin üzerine kurulu?','a5':'Cude IDE, açık kaynak Code-OSS editörü (VSCodium üzerinden) ile Cude\'un kendi yapay zekâ eklentisi, teması ve ayarları üzerine kuruludur. MIT lisansı ve üçüncü taraf bildirimleri uygulamayla gelir.',
     'q6':'Mac ya da Linux?','a6':'0.1.0 yalnız Windows x64 içindir. Diğer platformlar planlanıyor.',
     'foot.note':'Code-OSS ve VSCodium MIT lisanslıdır. Cude, Microsoft ile bağlantılı değildir.',
-    'prod.alt':'Başarısız testi düzeltip yeniden çalıştıran Cude IDE ajanı','pr.alt':'Gruplu sağlayıcılar ve logolarla Cude IDE sağlayıcı ayarları','lo.alt':'Bilgisayarda çalışan yerel llama.cpp sunucusunu bulan Cude IDE'
+    'prod.alt':'Sağlayıcı ayarlarının yanında bir görev üzerinde çalışan Cude IDE ajanı','pr.alt':'Gruplu sağlayıcılar ve logolarla Cude IDE sağlayıcı ayarları','lo.alt':'Cude IDE ilk açılış karşılama ve kurulum ekranı'
   },
   de: {
     'skip':'Zum Inhalt springen','nav.features':'Funktionen','nav.providers':'Anbieter','nav.agents':'Agenten','nav.download':'Download','nav.faq':'FAQ','nav.get':'Download','lang.label':'Sprache',
@@ -95,7 +95,7 @@ window.CUDE_I18N = {
     'q5':'Worauf basiert es?','a5':'Cude IDE basiert auf dem Open-Source-Editor Code-OSS (über VSCodium) mit Cudes eigener KI-Erweiterung, Theme und Einstellungen. MIT-Lizenz und Drittanbieterhinweise liegen der App bei.',
     'q6':'Mac oder Linux?','a6':'Version 0.1.0 gibt es nur für Windows x64. Weitere Plattformen sind geplant.',
     'foot.note':'Code-OSS und VSCodium stehen unter MIT-Lizenz. Cude ist nicht mit Microsoft verbunden.',
-    'prod.alt':'Cude IDE Agent behebt einen fehlschlagenden Test und führt ihn erneut aus','pr.alt':'Cude IDE Anbietereinstellungen mit gruppierten Anbietern und Logos','lo.alt':'Cude IDE findet einen lokal laufenden llama.cpp-Server'
+    'prod.alt':'Cude IDE Agent arbeitet an einer Aufgabe neben den Anbietereinstellungen','pr.alt':'Cude IDE Anbietereinstellungen mit gruppierten Anbietern und Logos','lo.alt':'Cude IDE Begrüßung und Einrichtung beim ersten Start'
   },
   fr: {
     'skip':'Aller au contenu','nav.features':'Fonctionnalités','nav.providers':'Fournisseurs','nav.agents':'Agents','nav.download':'Télécharger','nav.faq':'FAQ','nav.get':'Télécharger','lang.label':'Langue',
@@ -126,7 +126,7 @@ window.CUDE_I18N = {
     'q5':'Sur quoi est-il basé ?','a5':'Cude IDE repose sur l’éditeur open source Code-OSS (via VSCodium) avec l’extension IA, le thème et les réglages propres à Cude. La licence MIT et les mentions tierces sont fournies avec l’application.',
     'q6':'Mac ou Linux ?','a6':'La version 0.1.0 est uniquement pour Windows x64. D’autres plateformes sont prévues.',
     'foot.note':'Code-OSS et VSCodium sont sous licence MIT. Cude n’est pas affilié à Microsoft.',
-    'prod.alt':'L’agent de Cude IDE corrige un test en échec et le relance','pr.alt':'Réglages des fournisseurs de Cude IDE, groupés avec logos','lo.alt':'Cude IDE détecte un serveur llama.cpp local'
+    'prod.alt':'L’agent de Cude IDE travaille sur une tâche à côté des réglages des fournisseurs','pr.alt':'Réglages des fournisseurs de Cude IDE, groupés avec logos','lo.alt':'Accueil et configuration de Cude IDE au premier lancement'
   },
   es: {
     'skip':'Ir al contenido','nav.features':'Funciones','nav.providers':'Proveedores','nav.agents':'Agentes','nav.download':'Descargar','nav.faq':'FAQ','nav.get':'Descargar','lang.label':'Idioma',
@@ -157,7 +157,7 @@ window.CUDE_I18N = {
     'q5':'¿En qué se basa?','a5':'Cude IDE se basa en el editor de código abierto Code-OSS (vía VSCodium) con la extensión de IA, el tema y los ajustes propios de Cude. La licencia MIT y los avisos de terceros se incluyen con la app.',
     'q6':'¿Mac o Linux?','a6':'La versión 0.1.0 es solo para Windows x64. Hay más plataformas previstas.',
     'foot.note':'Code-OSS y VSCodium tienen licencia MIT. Cude no está afiliado a Microsoft.',
-    'prod.alt':'El agente de Cude IDE corrige una prueba fallida y la vuelve a ejecutar','pr.alt':'Ajustes de proveedores de Cude IDE agrupados con logotipos','lo.alt':'Cude IDE encuentra un servidor llama.cpp local'
+    'prod.alt':'El agente de Cude IDE trabaja en una tarea junto a los ajustes de proveedores','pr.alt':'Ajustes de proveedores de Cude IDE agrupados con logotipos','lo.alt':'Bienvenida y configuración de Cude IDE en el primer inicio'
   },
   pt: {
     'skip':'Ir para o conteúdo','nav.features':'Recursos','nav.providers':'Provedores','nav.agents':'Agentes','nav.download':'Baixar','nav.faq':'FAQ','nav.get':'Baixar','lang.label':'Idioma',
@@ -188,7 +188,7 @@ window.CUDE_I18N = {
     'q5':'Em que ele é baseado?','a5':'O Cude IDE é baseado no editor de código aberto Code-OSS (via VSCodium) com a extensão de IA, o tema e as configurações próprias do Cude. A licença MIT e os avisos de terceiros acompanham o app.',
     'q6':'Mac ou Linux?','a6':'A versão 0.1.0 é somente para Windows x64. Outras plataformas estão previstas.',
     'foot.note':'Code-OSS e VSCodium têm licença MIT. O Cude não é afiliado à Microsoft.',
-    'prod.alt':'Agente do Cude IDE corrigindo um teste com falha e rodando de novo','pr.alt':'Configurações de provedores do Cude IDE agrupadas com logotipos','lo.alt':'Cude IDE encontrando um servidor llama.cpp local'
+    'prod.alt':'Agente do Cude IDE trabalhando em uma tarefa ao lado das configurações de provedores','pr.alt':'Configurações de provedores do Cude IDE agrupadas com logotipos','lo.alt':'Boas-vindas e configuração do Cude IDE na primeira execução'
   },
   ru: {
     'skip':'Перейти к содержимому','nav.features':'Возможности','nav.providers':'Провайдеры','nav.agents':'Агенты','nav.download':'Скачать','nav.faq':'Вопросы','nav.get':'Скачать','lang.label':'Язык',
@@ -219,7 +219,7 @@ window.CUDE_I18N = {
     'q5':'На чём он основан?','a5':'Cude IDE основан на открытом редакторе Code-OSS (через VSCodium) с собственным ИИ-расширением, темой и настройками Cude. Лицензия MIT и уведомления третьих сторон входят в состав приложения.',
     'q6':'Mac или Linux?','a6':'Версия 0.1.0 доступна только для Windows x64. Другие платформы запланированы.',
     'foot.note':'Code-OSS и VSCodium распространяются по лицензии MIT. Cude не связан с Microsoft.',
-    'prod.alt':'Агент Cude IDE исправляет упавший тест и запускает его снова','pr.alt':'Настройки провайдеров Cude IDE с группами и логотипами','lo.alt':'Cude IDE находит локальный сервер llama.cpp'
+    'prod.alt':'Агент Cude IDE выполняет задачу рядом с настройками провайдеров','pr.alt':'Настройки провайдеров Cude IDE с группами и логотипами','lo.alt':'Приветствие и настройка Cude IDE при первом запуске'
   },
   ar: {
     'skip':'تخطَّ إلى المحتوى','nav.features':'الميزات','nav.providers':'المزوّدون','nav.agents':'الوكلاء','nav.download':'تنزيل','nav.faq':'الأسئلة','nav.get':'تنزيل','lang.label':'اللغة',
@@ -250,7 +250,7 @@ window.CUDE_I18N = {
     'q5':'على ماذا يعتمد؟','a5':'يعتمد Cude IDE على محرر Code-OSS مفتوح المصدر (عبر VSCodium) مع إضافة الذكاء الاصطناعي والسمة والإعدادات الخاصة بـ Cude. وتُرفق رخصة MIT وإشعارات الأطراف الثالثة مع التطبيق.',
     'q6':'ماك أو لينكس؟','a6':'الإصدار 0.1.0 متاح لنظام Windows x64 فقط. ومنصات أخرى مخطط لها.',
     'foot.note':'Code-OSS وVSCodium مرخّصان بموجب MIT. Cude غير تابع لشركة Microsoft.',
-    'prod.alt':'وكيل Cude IDE يصلح اختباراً فاشلاً ويشغّله مجدداً','pr.alt':'إعدادات المزوّدين في Cude IDE مجمّعة مع الشعارات','lo.alt':'Cude IDE يعثر على خادم llama.cpp محلي'
+    'prod.alt':'وكيل Cude IDE يعمل على مهمة بجانب إعدادات المزوّدين','pr.alt':'إعدادات المزوّدين في Cude IDE مجمّعة مع الشعارات','lo.alt':'شاشة الترحيب والإعداد في Cude IDE عند التشغيل الأول'
   }
 };
 

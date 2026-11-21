@@ -42,6 +42,7 @@
     </nav>
     <span class="spacer"></span>
     <label class="lang-pick"><span class="sr-only" data-i18n="lang.label">Language</span><select class="chip" id="lang" aria-label="Language"><option value="en">English</option></select></label>
+    <a class="chip gh-link" href="https://github.com/Emrevrg/cude-ide-releases" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
     <button class="chip" id="theme" type="button" aria-label="Toggle light or dark appearance">◐</button>
     <a class="btn btn-primary btn-small" href="#download" data-i18n="nav.get">Download</a>
   </div>
@@ -66,7 +67,7 @@
 
   <section class="product" aria-label="Product screenshot">
     <div class="wrap">
-      <div class="shot reveal"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/shot-agent.png" alt="Cude IDE agent fixing a failing test and running it again" data-i18n-alt="prod.alt" width="1368" height="729"></div>
+      <div class="shot reveal"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/shot-agent.png" alt="Cude IDE agent working on a task next to the provider settings" data-i18n-alt="prod.alt" width="1368" height="729"></div>
     </div>
   </section>
 
@@ -114,7 +115,7 @@
           <li data-i18n="ag.l2">Round and time budgets, so nothing runs forever</li>
           <li data-i18n="ag.l3">Run Codex, Claude Code, OpenCode, Gemini CLI or Qwen Code as the engine, with any of their models</li>
         </ul>
-        <div class="shot reveal mini"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/shot-local.png" alt="Cude IDE finding a local llama.cpp server running on the PC" data-i18n-alt="lo.alt" width="1368" height="729" loading="lazy"></div>
+        <div class="shot reveal mini"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/shot-local.png" alt="Cude IDE first-run welcome and setup" data-i18n-alt="lo.alt" width="1368" height="729" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -134,7 +135,7 @@
             <div class="fact"><b data-i18n="dl.type">Type</b><span>EXE</span></div>
           </div>
           <a class="btn btn-primary" id="dl-button" href="https://github.com/Emrevrg/cude-ide-releases/releases/latest/download/CudeIDE-Setup-0.1.0-x64.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg><span data-i18n="dl.button">Download CudeIDE-Setup-0.1.0-x64.exe</span></a>
-          <div class="hash"><code id="sha">SHA-256 FC1758CB803AF7DE9020DF37AAC21BAEFD8DDDA64745322F3B47B432D46DE8B5</code><button class="chip" id="copy-sha" type="button" data-i18n="dl.copy">Copy</button></div>
+          <div class="hash"><code id="sha">SHA-256 203B9D5F123A75AB403CA43DA93BD28344145AA4FE68D5B061878C9655642CB9</code><button class="chip" id="copy-sha" type="button" data-i18n="dl.copy">Copy</button></div>
         </div>
         <div class="steps reveal">
           <b data-i18n="dl.how">How to start</b>
@@ -167,6 +168,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Cude Studio · Norovox</span>
+    <a href="https://github.com/Emrevrg/cude-ide-releases" target="_blank" rel="noopener">GitHub · Releases</a>
     <span data-i18n="foot.note">Code-OSS and VSCodium are MIT licensed. Cude is not affiliated with Microsoft.</span>
   </div>
 </footer>

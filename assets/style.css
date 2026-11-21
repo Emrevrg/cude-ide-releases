@@ -180,3 +180,7 @@ img,svg,canvas,video{max-width:100%}
   #theme{display:none}
   .lang-pick select.chip{max-width:100px}
 }
+
+.gh-link{display:inline-flex;align-items:center;justify-content:center;padding:0 9px}
+footer a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+@media (max-width: 380px){.gh-link{display:none}}
