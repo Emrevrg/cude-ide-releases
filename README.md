@@ -9,3 +9,5 @@ Website and Windows downloads for **Cude IDE**, a portable AI code editor.
 Verify in PowerShell: `Get-FileHash .\CudeIDE-Setup-0.1.0-x64.exe`
 
 Cude IDE is built on Code-OSS (via VSCodium), MIT licensed. Cude is not affiliated with Microsoft.
+
+Support: [cudide-sup@outlook.com](mailto:cudide-sup@outlook.com)
