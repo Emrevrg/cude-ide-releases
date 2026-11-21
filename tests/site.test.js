@@ -1,4 +1,4 @@
-// node --test tests/  — language picking and translation completeness for the Cude IDE site.
+// node --test tests/site.test.js — language picking and translation completeness for the Cude IDE site.
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
